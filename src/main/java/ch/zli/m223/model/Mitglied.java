@@ -1,13 +1,31 @@
 package ch.zli.m223.model;
 
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+import org.eclipse.microprofile.openapi.annotations.media.Schema;
+
 public class Mitglied {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Schema(readOnly = true)
     private int mitgliedId;
+
+    @Column(nullable = false)
     private String vorname;
+
+    @Column(nullable = false)
     private String nachname;
+
+    @Column(nullable = false)
     private String email;
+
+    @Column(nullable = false)
     private String passwort;
-    
+
     public int getMitgliedId() {
         return mitgliedId;
     }

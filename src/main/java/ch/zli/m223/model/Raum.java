@@ -1,9 +1,23 @@
 package ch.zli.m223.model;
 
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+import org.eclipse.microprofile.openapi.annotations.media.Schema;
+
 public class Raum {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Schema(readOnly = true)
     private int raumId;
+
+    @Column(nullable = false)
     private String name;
+
+    @Column(nullable = false)
     private String ausstattung;
 
     public int getRaumId() {
