@@ -21,7 +21,7 @@ public class Buchung {
     private Date datum;
 
     @Column(nullable = false)
-    private String status;
+    private int zeitraum;
 
     @ManyToOne
     @Column(nullable = false)
@@ -42,12 +42,6 @@ public class Buchung {
     }
     public void setDatum(Date datum) {
         this.datum = datum;
-    }
-    public String getStatus() {
-        return status;
-    }
-    public void setStatus(String status) {
-        this.status = status;
     }
     public Mitglied getMitglied() {
         return mitglied;
