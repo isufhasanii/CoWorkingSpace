@@ -12,18 +12,18 @@ public class Admin {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Schema(readOnly = true)
-    private String adminId;
+    private int adminId;
 
     @Column(nullable = false)
     private String name;
 
-    public String getAdminId() {
+    public int getAdminId() {
         return adminId;
     }
     public String getName() {
         return name;
     }
-    public void setAdminId(String adminId) {
+    public void setAdminId(int adminId) {
         this.adminId = adminId;
     }
     public void setName(String name) {
