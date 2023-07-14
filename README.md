@@ -13,6 +13,7 @@ CoWorkingSpace ist ein Buchungssystem für Räume in CoWorking Space, welches mi
 1. Starte das Projekt mit dem Kommando `Quarkus: Debug current Quarkus Project`
 1. Probiere die Client-Applikation unter http://localhost:8080 aus.
 1. Schaue die API auf http://localhost:8080/q/swagger-ui/ an.
+2. Stellen Sie sicher das javax.mail.jar in der dependency drin ist, für die E-Mail-Funktion, sonst laden sie dies auf der JavaX Mail-Homepage runter.
 
 ## Datenbank
 
