@@ -23,8 +23,8 @@ public class BuchungsanfrageController {
     @Path("/{buchungsanfrageId}")
     @PUT
     @Operation(summary = "Updates an buchungsanfrage.", description = "Updates an buchungsanfrage by its id.")
-    public Buchungsanfrage update(@PathParam("buchungsanfrageId") int buchungsanfrageId, @Valid String status, @Valid Buchungsanfrage buchungsanfrage) {
-        return buchungsanfragenService.updateStatus(buchungsanfrageId, status, buchungsanfrage);
+    public Buchungsanfrage update(@PathParam("buchungsanfrageId") int buchungsanfrageId, @Valid Buchungsanfrage buchungsanfrage) {
+        return buchungsanfragenService.updateStatus(buchungsanfrageId, buchungsanfrage);
     }
 
 }

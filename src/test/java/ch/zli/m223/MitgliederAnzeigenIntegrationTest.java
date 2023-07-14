@@ -1,8 +1,11 @@
 package ch.zli.m223;
 
-import static io.restassured.RestAssured.*;
-import static org.hamcrest.Matchers.*;
-import io.restassured.http.ContentType;
+import static io.restassured.RestAssured.authentication;
+import static io.restassured.RestAssured.baseURI;
+import static io.restassured.RestAssured.basic;
+import static io.restassured.RestAssured.when;
+import static org.hamcrest.Matchers.greaterThanOrEqualTo;
+
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 

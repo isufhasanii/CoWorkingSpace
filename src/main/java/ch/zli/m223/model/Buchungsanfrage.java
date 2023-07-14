@@ -21,11 +21,9 @@ public class Buchungsanfrage {
     private String status;
 
     @ManyToOne
-    @Column(nullable = false)
     private Mitglied member;
 
     @ManyToOne
-    @Column(nullable = false)
     private Raum raum;
 
     public int getAnfrageId() {
@@ -59,6 +57,4 @@ public class Buchungsanfrage {
         this.raum = raum;
     }
 
-    
-    
 }

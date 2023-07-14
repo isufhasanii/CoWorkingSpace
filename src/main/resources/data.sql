@@ -1,5 +1,5 @@
-INSERT INTO admin (name, username, password) VALUES ('Adi Minster', 'adimin' 8953);
-INSERT INTO admin (name, username, password) VALUES ('Java Python' 'javpyt' 8952);
+INSERT INTO admin (name, username, password) VALUES ('Adi Minster', 'adimin', "8953");
+INSERT INTO admin (name, username, password) VALUES ('Java Python', 'javpyt', "8952");
 
 INSERT INTO raum (name, ausstattung) VALUES ('Meeting Room 1', 'Beamer, Whiteboard');
 INSERT INTO raum (name, ausstattung) VALUES ('Workspace 2', 'Schreibtisch, Stuhl');

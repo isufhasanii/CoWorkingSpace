@@ -1,6 +1,7 @@
 package ch.zli.m223.service;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.inject.Produces;
 import javax.inject.Inject;
 import javax.mail.Message;
 import javax.mail.MessagingException;
@@ -15,7 +16,12 @@ import ch.zli.m223.model.Mitglied;
 public class EmailService {
 
     @Inject
-    private Session mailSession; // Injiziere die Mail-Session aus deiner Konfiguration
+    private Session mailSession;
+
+    @Produces
+    public Session produceMailSession() {
+        return mailSession;
+    }
 
     public void sendBookingConfirmationEmail(Mitglied mitglied) throws MessagingException {
         MimeMessage message = new MimeMessage(mailSession);

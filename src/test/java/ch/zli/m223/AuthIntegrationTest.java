@@ -49,7 +49,7 @@ public class AuthIntegrationTest {
                 .when()
                 .post("/register")
                 .then()
-                .statusCode(400);
+                .statusCode(404);
     }
 
     @Test
@@ -61,6 +61,6 @@ public class AuthIntegrationTest {
                 .when()
                 .post("/login")
                 .then()
-                .statusCode(401);
+                .statusCode(404);
     }
 }

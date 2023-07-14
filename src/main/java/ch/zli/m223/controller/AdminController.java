@@ -33,10 +33,19 @@ public class AdminController {
     MitgliedService mitgliedService;
 
     @GET
+    @Path("/admin")
     @Produces(MediaType.APPLICATION_JSON)
     @Operation(summary = "Index all admin.", description = "Returns a list of all admin.")
     public List<Admin> index() {
         return adminService.findAll();
+    }
+
+    @GET
+    @Path("/mitglieder")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Operation(summary = "Index all mitglieder.", description = "Returns a list of all mitglieder.")
+    public List<Mitglied> indexMitglied() {
+        return mitgliedService.findAll();
     }
 
     @POST
@@ -73,13 +82,6 @@ public class AdminController {
     @Operation(summary = "Updates an mitglied.", description = "Updates an mitglied by its id.")
     public Mitglied update(@PathParam("mitgliedId") int mitgliedId, @Valid Mitglied mitglied) {
         return mitgliedService.updateMitglied(mitgliedId, mitglied);
-    }
-
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    @Operation(summary = "Index all mitglieder.", description = "Returns a list of all mitglieder.")
-    public List<Mitglied> indexMitglied() {
-        return mitgliedService.findAll();
     }
 
 }

@@ -44,7 +44,7 @@ public class BuchungController {
     @Operation(summary = "Creates a new buchung.", description = "Creates a new buchung and returns the newly added buchung.")
     public Buchung create(@Valid Buchung buchung) {
         try {
-            emailService.sendBookingConfirmationEmail(buchung.getMitglied());
+            emailService.sendBookingConfirmationEmail(buchung.getMember());
         } catch (MessagingException e) {
             throw new RuntimeException(e);
         }

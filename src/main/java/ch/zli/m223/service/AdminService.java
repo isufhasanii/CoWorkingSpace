@@ -54,3 +54,4 @@ public class AdminService {
         return query.getResultList();
     }
 }
+

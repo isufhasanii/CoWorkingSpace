@@ -21,11 +21,9 @@ public class Buchung {
     private int zeitraum;
 
     @ManyToOne
-    @Column(nullable = false)
-    private Mitglied mitglied;
+    private Mitglied member;
 
     @ManyToOne
-    @Column(nullable = false)
     private Raum raum;
 
     public int getBuchungId() {
@@ -40,11 +38,17 @@ public class Buchung {
     public void setDatum(Date datum) {
         this.datum = datum;
     }
-    public Mitglied getMitglied() {
-        return mitglied;
+    public int getZeitraum() {
+        return zeitraum;
     }
-    public void setMitglied(Mitglied mitglied) {
-        this.mitglied = mitglied;
+    public void setZeitraum(int zeitraum) {
+        this.zeitraum = zeitraum;
+    }
+    public Mitglied getMember() {
+        return member;
+    }
+    public void setMember(Mitglied member) {
+        this.member = member;
     }
     public Raum getRaum() {
         return raum;

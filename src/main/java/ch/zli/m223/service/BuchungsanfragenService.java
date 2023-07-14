@@ -11,8 +11,8 @@ public class BuchungsanfragenService {
     @Inject
     EntityManager entityManager;
 
-    public Buchungsanfrage updateStatus(int buchungsanfrageId, String status, Buchungsanfrage buchungsanfrage) {
-        buchungsanfrage.setStatus(status);
+    public Buchungsanfrage updateStatus(int buchungsanfrageId, Buchungsanfrage buchungsanfrage) {
+        buchungsanfrage.setAnfrageId(buchungsanfrageId);;
         return entityManager.merge(buchungsanfrage);
     }
 }
