@@ -1,4 +1,4 @@
-# Übungsprojekt: Punch Clock
+# Übungsprojekt: CoWorkingSpace
 
 CoWorkingSpace ist ein Buchungssystem für Räume in CoWorking Space, welches mit Quarkus entwickelt wird.
 
