@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.annotation.security.RolesAllowed;
 import javax.inject.Inject;
+import javax.mail.MessagingException;
 import javax.validation.Valid;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -17,6 +18,7 @@ import javax.ws.rs.core.MediaType;
 
 import ch.zli.m223.model.Buchung;
 import ch.zli.m223.service.BuchungService;
+import ch.zli.m223.service.EmailService;
 import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 
@@ -27,6 +29,7 @@ public class BuchungController {
 
     @Inject
     BuchungService buchungService;
+    private EmailService emailService;
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
@@ -40,6 +43,11 @@ public class BuchungController {
     @Consumes(MediaType.APPLICATION_JSON)
     @Operation(summary = "Creates a new buchung.", description = "Creates a new buchung and returns the newly added buchung.")
     public Buchung create(@Valid Buchung buchung) {
+        try {
+            emailService.sendBookingConfirmationEmail(buchung.getMitglied());
+        } catch (MessagingException e) {
+            throw new RuntimeException(e);
+        }
         return buchungService.createBuchung(buchung);
     }
 
