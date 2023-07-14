@@ -20,12 +20,9 @@ import ch.zli.m223.service.MitgliedService;
 import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 
-import ch.zli.m223.model.Entry;
-import ch.zli.m223.service.EntryService;
-
 @Path("/mitglied")
 @Tag(name = "Mitglied", description = "Handling of mitglied")
-@RolesAllowed({ "Admin" })
+@RolesAllowed({ "Admin", "Mitglied" })
 public class MitgliedController {
 
     @Inject

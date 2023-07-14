@@ -1,12 +1,10 @@
 package ch.zli.m223.model;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
 
+@Entity
 public class Raum {
 
     @Id

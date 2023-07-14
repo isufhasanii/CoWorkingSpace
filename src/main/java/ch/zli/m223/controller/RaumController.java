@@ -15,15 +15,10 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import ch.zli.m223.model.Mitglied;
 import ch.zli.m223.model.Raum;
-import ch.zli.m223.service.MitgliedService;
 import ch.zli.m223.service.RaumService;
 import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
-
-import ch.zli.m223.model.Entry;
-import ch.zli.m223.service.EntryService;
 
 @Path("/raum")
 @Tag(name = "Raum", description = "Handling of raum")

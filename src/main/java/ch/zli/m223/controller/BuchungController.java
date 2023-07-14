@@ -16,14 +16,9 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import ch.zli.m223.model.Buchung;
-import ch.zli.m223.model.Mitglied;
 import ch.zli.m223.service.BuchungService;
-import ch.zli.m223.service.MitgliedService;
 import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
-
-import ch.zli.m223.model.Entry;
-import ch.zli.m223.service.EntryService;
 
 @Path("/buchung")
 @Tag(name = "Buchung", description = "Handling of buchung")
