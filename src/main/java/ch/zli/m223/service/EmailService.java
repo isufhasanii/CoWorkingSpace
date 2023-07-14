@@ -25,11 +25,11 @@ public class EmailService {
 
     public void sendBookingConfirmationEmail(Mitglied mitglied) throws MessagingException {
         MimeMessage message = new MimeMessage(mailSession);
-        message.setFrom(new InternetAddress("isuf.hasani@student.ksh.ch")); // Absenderadresse
-        message.addRecipient(Message.RecipientType.TO, new InternetAddress(mitglied.getEmail())); // Empfängeradresse
-        message.setSubject("Buchungsbestätigung"); // Betreff der E-Mail
-        message.setText("Vielen Dank für Ihre Buchung."); // Inhalt der E-Mail
+        message.setFrom(new InternetAddress("isuf.hasani@student.ksh.ch"));
+        message.addRecipient(Message.RecipientType.TO, new InternetAddress(mitglied.getEmail()));
+        message.setSubject("Buchungsbestätigung");
+        message.setText("Vielen Dank für Ihre Buchung.");
 
-        Transport.send(message); // Sende die E-Mail
+        Transport.send(message);
     }
 }

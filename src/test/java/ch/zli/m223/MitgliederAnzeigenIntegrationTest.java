@@ -27,7 +27,7 @@ public class MitgliederAnzeigenIntegrationTest {
                 .get("/admin")
                 .then()
                 .statusCode(200)
-                .body("size()", greaterThanOrEqualTo(0)); // Überprüfe, ob die Liste nicht leer ist
+                .body("size()", greaterThanOrEqualTo(0)); 
     }
 
 }

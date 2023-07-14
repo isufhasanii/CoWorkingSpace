@@ -20,7 +20,6 @@ public class AuthIntegrationTest {
 
     @Test
     public void testAuthenticationEndpoint() {
-        // Registrierung eines Mitglieds vor der Authentifizierung
         given()
                 .contentType("application/json")
                 .body("{ \"vorname\": \"Max\", \"nachname\": \"Mustermann\", \"email\": \"max@example.com\", \"passwort\": \"pass123\" }")
@@ -29,7 +28,6 @@ public class AuthIntegrationTest {
                 .then()
                 .statusCode(201);
 
-        // Authentifizierung mit den registrierten Anmeldedaten
         given()
                 .contentType("application/json")
                 .body("{ \"email\": \"max@example.com\", \"passwort\": \"pass123\" }")
@@ -42,7 +40,6 @@ public class AuthIntegrationTest {
 
     @Test
     public void testRegistrationWithInvalidData() {
-        // Registrierung mit fehlenden Pflichtfeldern
         given()
                 .contentType("application/json")
                 .body("{ \"vorname\": \"Max\", \"nachname\": \"Mustermann\", \"passwort\": \"pass123\" }")
@@ -54,7 +51,6 @@ public class AuthIntegrationTest {
 
     @Test
     public void testAuthenticationWithInvalidCredentials() {
-        // Authentifizierung mit falschen Anmeldedaten
         given()
                 .contentType("application/json")
                 .body("{ \"email\": \"max@example.com\", \"passwort\": \"wrongpassword\" }")

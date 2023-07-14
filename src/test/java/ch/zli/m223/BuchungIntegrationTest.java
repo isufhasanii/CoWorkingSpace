@@ -8,7 +8,6 @@ public class BuchungIntegrationTest {
 
     @Test
     public void testDeleteBuchungEndpoint() {
-        // Erstellen einer Buchung vor dem Löschen
         given()
                 .contentType("application/json")
                 .body("{ \"datum\": \"2023-07-12\", \"zeitraum\": 1, \"mitglied\": { \"mitgliedId\": 1 }, \"raum\": { \"raumId\": 1 } }")
@@ -17,7 +16,6 @@ public class BuchungIntegrationTest {
                 .then()
                 .statusCode(201);
 
-        // Löschen der erstellten Buchung
         given()
                 .pathParam("buchungId", 1)
                 .when()
@@ -28,7 +26,6 @@ public class BuchungIntegrationTest {
 
     @Test
     public void testUpdateBuchungEndpoint() {
-        // Erstellen einer Buchung vor der Aktualisierung
         given()
                 .contentType("application/json")
                 .body("{ \"datum\": \"2023-07-12\", \"zeitraum\": 1, \"mitglied\": { \"mitgliedId\": 1 }, \"raum\": { \"raumId\": 1 } }")
@@ -37,7 +34,6 @@ public class BuchungIntegrationTest {
                 .then()
                 .statusCode(201);
 
-        // Aktualisieren der erstellten Buchung
         given()
                 .contentType("application/json")
                 .pathParam("buchungId", 1)
