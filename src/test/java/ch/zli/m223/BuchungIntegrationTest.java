@@ -13,7 +13,7 @@ public class BuchungIntegrationTest {
                 .contentType("application/json")
                 .body("{ \"datum\": \"2023-07-12\", \"zeitraum\": 1, \"mitglied\": { \"mitgliedId\": 1 }, \"raum\": { \"raumId\": 1 } }")
                 .when()
-                .post("/api/buchung")
+                .post("/buchung")
                 .then()
                 .statusCode(201);
 
@@ -21,7 +21,7 @@ public class BuchungIntegrationTest {
         given()
                 .pathParam("buchungId", 1)
                 .when()
-                .delete("/api/buchung/{buchungId}")
+                .delete("/buchung/{buchungId}")
                 .then()
                 .statusCode(204);
     }
@@ -33,7 +33,7 @@ public class BuchungIntegrationTest {
                 .contentType("application/json")
                 .body("{ \"datum\": \"2023-07-12\", \"zeitraum\": 1, \"mitglied\": { \"mitgliedId\": 1 }, \"raum\": { \"raumId\": 1 } }")
                 .when()
-                .post("/api/buchung")
+                .post("/buchung")
                 .then()
                 .statusCode(201);
 
@@ -43,7 +43,7 @@ public class BuchungIntegrationTest {
                 .pathParam("buchungId", 1)
                 .body("{ \"datum\": \"2023-07-13\", \"zeitraum\": 2, \"mitglied\": { \"mitgliedId\": 1 }, \"raum\": { \"raumId\": 2 } }")
                 .when()
-                .put("/api/buchung/{buchungId}")
+                .put("/buchung/{buchungId}")
                 .then()
                 .statusCode(200);
     }

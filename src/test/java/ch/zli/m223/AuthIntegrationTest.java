@@ -13,7 +13,7 @@ public class AuthIntegrationTest {
                 .contentType("application/json")
                 .body("{ \"vorname\": \"Max\", \"nachname\": \"Mustermann\", \"email\": \"max@example.com\", \"passwort\": \"pass123\" }")
                 .when()
-                .post("/api/register")
+                .post("/register")
                 .then()
                 .statusCode(201);
     }
@@ -25,7 +25,7 @@ public class AuthIntegrationTest {
                 .contentType("application/json")
                 .body("{ \"vorname\": \"Max\", \"nachname\": \"Mustermann\", \"email\": \"max@example.com\", \"passwort\": \"pass123\" }")
                 .when()
-                .post("/api/register")
+                .post("/register")
                 .then()
                 .statusCode(201);
 
@@ -34,7 +34,7 @@ public class AuthIntegrationTest {
                 .contentType("application/json")
                 .body("{ \"email\": \"max@example.com\", \"passwort\": \"pass123\" }")
                 .when()
-                .post("/api/login")
+                .post("/login")
                 .then()
                 .statusCode(200)
                 .body("accessToken", not(emptyOrNullString()));
@@ -47,7 +47,7 @@ public class AuthIntegrationTest {
                 .contentType("application/json")
                 .body("{ \"vorname\": \"Max\", \"nachname\": \"Mustermann\", \"passwort\": \"pass123\" }")
                 .when()
-                .post("/api/register")
+                .post("/register")
                 .then()
                 .statusCode(400);
     }
@@ -59,7 +59,7 @@ public class AuthIntegrationTest {
                 .contentType("application/json")
                 .body("{ \"email\": \"max@example.com\", \"passwort\": \"wrongpassword\" }")
                 .when()
-                .post("/api/login")
+                .post("/login")
                 .then()
                 .statusCode(401);
     }
