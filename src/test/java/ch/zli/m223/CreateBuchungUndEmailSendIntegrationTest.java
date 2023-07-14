@@ -1,3 +1,5 @@
+package ch.zli.m223;
+
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 

@@ -11,9 +11,12 @@ public class Admin {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Schema(readOnly = true)
     private int adminId;
-
     @Column(nullable = false)
     private String name;
+    @Column(nullable = false)
+    private String username;
+    @Column(nullable = false)
+    private int password;
 
     public int getAdminId() {
         return adminId;
@@ -27,5 +30,20 @@ public class Admin {
     public void setName(String name) {
         this.name = name;
     }
-    
+
+    public int getPassword() {
+        return password;
+    }
+
+    public void setPassword(int password) {
+        this.password = password;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
 }

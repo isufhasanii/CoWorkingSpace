@@ -9,8 +9,8 @@ import org.junit.jupiter.api.Test;
 public class MitgliederVerwaltungIntegrationTest {
 
     private static final String BASE_URL = "http://localhost:8080/api";
-    private static final String USERNAME = "admin";
-    private static final String PASSWORD = "adminpassword";
+    private static final String USERNAME = "adimin";
+    private static final int PASSWORD = 8953;
 
     @BeforeAll
     public static void setup() {
