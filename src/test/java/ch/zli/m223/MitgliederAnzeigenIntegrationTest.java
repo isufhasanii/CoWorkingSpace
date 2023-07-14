@@ -10,7 +10,7 @@ public class MitgliederAnzeigenIntegrationTest {
 
     private static final String BASE_URL = "http://localhost:8080/";
     private static final String USERNAME = "adimin";
-    private static final int PASSWORD = 8953;
+    private static final String PASSWORD = "8953";
 
     @BeforeAll
     public static void setup() {

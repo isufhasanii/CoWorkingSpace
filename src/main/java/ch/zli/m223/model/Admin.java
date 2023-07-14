@@ -16,7 +16,7 @@ public class Admin {
     @Column(nullable = false)
     private String username;
     @Column(nullable = false)
-    private int password;
+    private String password;
 
     public int getAdminId() {
         return adminId;
@@ -31,11 +31,11 @@ public class Admin {
         this.name = name;
     }
 
-    public int getPassword() {
+    public String getPassword() {
         return password;
     }
 
-    public void setPassword(int password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 
